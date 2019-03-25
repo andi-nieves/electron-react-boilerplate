@@ -1,11 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./Router";
 import registerServiceWorker from "./registerServiceWorker";
-// import injectTapEventPlugin from 'react-tap-event-plugin';
-//TMP dependacy for material
-// var injectTapEventPlugin = require("react-tap-event-plugin");
-// injectTapEventPlugin();
+import theme from "./Theme";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import App from "./Router";
+import Sidebar from "./Components/Sidebar";
+
+ReactDOM.render(
+  <MuiThemeProvider theme={theme}>
+    <Sidebar />
+    <div style={{ marginLeft: 250 }}>
+      <App />
+    </div>
+  </MuiThemeProvider>,
+  document.getElementById("root")
+);
 registerServiceWorker();

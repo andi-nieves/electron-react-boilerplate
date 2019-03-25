@@ -7,10 +7,10 @@ function App(props) {
 
   return (
     <Grid container>
-      <Grid item>
+      <Grid item xs={12}>
         <Typography variant="h1">{name}</Typography>
       </Grid>
-      <Grid item>
+      <Grid item xs={12}>
         <Button
           variant="contained"
           color="primary"

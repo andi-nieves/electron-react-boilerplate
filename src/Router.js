@@ -1,24 +1,16 @@
 import React from "react";
-import { Switch, BrowserRouter, Route } from "react-router-dom";
-// import { Route } from "react-router";
-import App from "./App";
-import SecondScreen from "./SecondScreen";
+import { BrowserRouter, Route } from "react-router-dom";
+import App from "./Screens/App";
+import SecondScreen from "./Screens/SecondScreen";
+
+
 const history = require("history").createBrowserHistory();
 
 const Routes = () => (
-  <React.Fragment>
-    <BrowserRouter history={history}>
-      {/* <Switch> */}
-        <Route key="r1" exact={true} path="/" component={App} />
-        <Route
-          key="r2"
-          exact
-          path="/SecondScreen"
-          component={SecondScreen}
-        />
-      {/* </Switch> */}
-    </BrowserRouter>
-  </React.Fragment>
+  <BrowserRouter history={history}>
+    <Route key="r1" exact={true} path="/" component={App} />
+    <Route key="r2" exact path="/SecondScreen" component={SecondScreen} />
+  </BrowserRouter>
 );
 
 export default Routes;
